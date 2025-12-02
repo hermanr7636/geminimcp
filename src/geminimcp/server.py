@@ -36,7 +36,7 @@ def run_shell_command(cmd: list[str]) -> Generator[str, None, None]:
     """
     popen_cmd = cmd
 
-    gemini_path = shutil.which("gemini") or cmd[0]
+    gemini_path = shutil.which("gemini.cmd") or shutil.which("gemini") or cmd[0]
     popen_cmd[0] = gemini_path
 
     # if os.name == "nt" and gemini_path.lower().endswith((".cmd", ".bat")):
